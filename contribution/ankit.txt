@@ -1,3 +1,11 @@
-// 22-8-23 
+## 22-8-23 
+
 > created repo 
+
 > created backend, frontend directories
+
+## 24-8-23
+
+> created userModel
+> created register, login
+> get userProfile complete
