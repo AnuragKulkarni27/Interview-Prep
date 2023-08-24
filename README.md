@@ -1,7 +1,7 @@
 # Interview-Prep
 
->backend: 
+## backend: 
 
-> npm init -y
+npm init -y
 
-> npm i express nodemon mongoose dotenv cors morgan bcrypt jsonwebtoken
+npm i express nodemon mongoose dotenv cors morgan bcrypt jsonwebtoken
