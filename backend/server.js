@@ -4,6 +4,8 @@ import morgan from "morgan"
 import cors from 'cors'
 import connectDB from './config/db.js'
 import userRoute from './routes/userRoute.js'
+import leaderboardRouter from './routes/leaderboardRoutes.js'
+
 const app = express()
 dotenv.config()
 
@@ -14,6 +16,7 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 app.use('/api/v1/user',userRoute)
+app.use('/api/v1',leaderboardRouter)
 
 const PORT = process.env.PORT
 

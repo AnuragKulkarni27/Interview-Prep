@@ -129,7 +129,6 @@ export const userProfileController = async(req,res) => {
                 interviewTaken: user.interviewsTaken,
                 interviewGiven: user.interviewsGiven,
                 linkedIn: user.linkedIn,
-                bio: user.linkedIn
             }
         })
     }
@@ -139,6 +138,31 @@ export const userProfileController = async(req,res) => {
             success: false,
             message: "Something went wrong",
             err
+        })
+    }
+}
+
+export const reportUser = async(req,res) => {
+    try{
+        const { _id } = req.body
+        const existingUser = await userModel.findOne({_id})
+        if(!existingUser) {
+            res.status(404).send({
+                success: false,
+                message: "User not found"
+            })
+        }
+        await userModel.findByIdAndUpdate(_id,{reportCount: existingUser.reportCount+1})
+        res.status(201).send({
+            success: true,
+            message: "Reported!"
+        })
+    }
+    catch(err) {
+        console.log(err)
+        res.status(500).send({
+            success: false,
+            message: "Something went wrong!"
         })
     }
 }
