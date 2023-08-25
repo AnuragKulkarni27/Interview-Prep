@@ -36,7 +36,7 @@ const userSchema = new mongoose.Schema({
     },
     reportCount: {
         type: Number,
-        default: 3,
+        default: 0,
     },
 
     linkedIn: {
@@ -44,12 +44,8 @@ const userSchema = new mongoose.Schema({
         unique: true,
         trim: true,
         required: true
-    },
-
-    bio: {
-        type: String,
-        trim: true,
     }
+    
 },{timestamps: true})
 
 export default mongoose.model('users',userSchema)

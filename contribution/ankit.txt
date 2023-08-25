@@ -9,3 +9,9 @@
 > created userModel
 > created register, login
 > get userProfile complete
+
+
+## 25-8-23
+
+> created getTopUsers(B.E.)
+> complete reportUser function - only works if the user is logged in/has an authorization token
