@@ -5,18 +5,30 @@ import JWT from 'jsonwebtoken'
 
 export const registerController = async(req,res) => {
     try {
-        const { username, email, password, department, linkedIn, bio } = req.body
+        const { username, email, password, department, linkedIn } = req.body
         if(!username) {
-            return res.send({message: "username is required!"})
+            return res.send({
+                success: false,
+                message: "username is required!"
+            })
         }
         if(!email) {
-            return res.send({message: "email is required!"})
+            return res.send({
+                success: false,
+                message: "email is required!"
+            })
         }
         if(!password) {
-            return res.send({message: "password is required!"})
+            return res.send({
+                success: false,
+                message: "password is required!"
+            })
         }
         if(!linkedIn) {
-            return res.send({message: "linkedIn is required!"})
+            return res.send({
+                success: false,
+                message: "linkedIn is required!"
+            })
         }
 
         const existingUsername = await userModel.findOne({username})
@@ -48,7 +60,7 @@ export const registerController = async(req,res) => {
     catch(err) {
         res.status(500).send({
             success: false,
-            message: "Something  went wrong",
+            message: "Something went wrong in backend",
             err
         })
     }
