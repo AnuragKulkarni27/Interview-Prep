@@ -1,0 +1,502 @@
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .desktop2Child {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 720px);
+    background: linear-gradient(65.25deg, #5341ad, #9b8ede);
+    width: 1440px;
+    height: 1000px;
+  }
+  .front1Icon {
+    position: absolute;
+    top: 145px;
+    left: 682px;
+    width: 689px;
+    height: 707px;
+    object-fit: cover;
+    opacity: 1;
+  }
+  .front1Icon.animate {
+    animation: 1s ease-in 0.2s 1 normal backwards fade-in;
+  }
+  .preparingForJobs {
+    margin: 0;
+    position: absolute;
+    top: 323px;
+    left: 114px;
+    font-size: 80px;
+    font-weight: 700;
+    font-family: inherit;
+    color: var(--color-white);
+    display: inline-block;
+    width: 562px;
+  }
+  .desktop2Item {
+    position: absolute;
+    top: 289.5px;
+    left: 121px;
+    width: 65px;
+    height: 3.5px;
+    object-fit: cover;
+  }
+  .exploreWithUs,
+  .weGotYou {
+    margin: 0;
+    position: absolute;
+    font-family: inherit;
+  }
+  .weGotYou {
+    top: 543px;
+    left: 111px;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--color-white);
+    cursor: pointer;
+  }
+  .exploreWithUs {
+    top: 1134px;
+    left: calc(50% - 200px);
+    font-size: var(--font-size-32xl);
+    font-weight: 500;
+  }
+  .desktop2Inner {
+    position: absolute;
+    top: 1000px;
+    left: 0;
+    background-color: transparent;
+    width: 1440px;
+    height: 1291px;
+  }
+  .lineDiv {
+    position: absolute;
+    top: 1096px;
+    left: calc(50% - 31px);
+    border-top: 2px solid var(--color-black);
+    box-sizing: border-box;
+    width: 60px;
+    height: 2px;
+  }
+  .weArePassionate {
+    margin: 0;
+  }
+  .weArePassionateContainer {
+    position: absolute;
+    top: 1270px;
+    left: calc(50% - 580px);
+    font-size: var(--font-size-3xl);
+    line-height: 161%;
+    font-weight: 300;
+    font-family: var(--font-montserrat);
+    color: var(--color-black);
+    text-align: center;
+    display: inline-block;
+    width: 1160px;
+    height: 84px;
+  }
+  .pexelsKarolinaGrabowska4491 {
+    position: absolute;
+    top: 1438px;
+    left: calc(50% - 454px);
+    width: 901px;
+    height: 601px;
+    background-image: url(/public/image-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+  .rectangleSection {
+    position: absolute;
+    top: 2337px;
+    left: calc(50% - 723px);
+    background-color: rgba(240, 234, 255, 0.9);
+    width: 1440px;
+    height: 1600px;
+  }
+  .ashishAndAashu {
+    position: absolute;
+    top: 2833px;
+    left: calc(50% + 315px);
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+  .howToUtilise,
+  .joinFromYourContainer {
+    position: absolute;
+    display: inline-block;
+  }
+  .joinFromYourContainer {
+    top: 2721px;
+    left: 744px;
+    line-height: 140%;
+    font-weight: 300;
+    color: var(--color-gray-100);
+    width: 463px;
+  }
+  .howToUtilise {
+    margin: 0;
+    top: 2427px;
+    left: calc(50% - 192px);
+    font-size: var(--font-size-32xl);
+    font-weight: 500;
+    font-family: inherit;
+    width: 384px;
+    height: 56px;
+  }
+  .pexelsSamLion57095691Icon {
+    position: absolute;
+    top: 2566px;
+    left: 126px;
+    width: 540.49px;
+    height: 360px;
+    object-fit: cover;
+  }
+  .easyToUse {
+    position: absolute;
+    top: 2630px;
+    left: 744px;
+    font-size: var(--font-size-21xl);
+    font-weight: 500;
+    color: var(--color-blueviolet);
+  }
+  .image1Icon,
+  .pexelsAnnaShvets37274631Icon {
+    position: absolute;
+    top: 3017px;
+    left: 771px;
+    width: 550px;
+    height: 360px;
+    object-fit: cover;
+  }
+  .image1Icon {
+    top: 85px;
+    left: 296px;
+    width: 25px;
+    height: 26.47px;
+  }
+  .learningIsntJustContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 140%;
+    font-weight: 300;
+  }
+  .image1Parent {
+    position: absolute;
+    top: 3180px;
+    left: 126px;
+    width: 602px;
+    height: 112px;
+    color: var(--color-gray-100);
+  }
+  .trackYourProgress {
+    position: absolute;
+    top: 3097px;
+    left: 126px;
+    font-size: var(--font-size-21xl);
+    font-weight: 500;
+    color: var(--color-blueviolet);
+  }
+  .pexelsSoraShimazaki5673488Icon {
+    position: absolute;
+    top: 3467px;
+    left: 126px;
+    width: 540px;
+    height: 360px;
+    object-fit: cover;
+  }
+  .succeedWithYour {
+    position: absolute;
+    top: 3535px;
+    left: 746px;
+    font-size: var(--font-size-21xl);
+    font-weight: 500;
+    color: var(--color-blueviolet);
+  }
+  .multipleMeetingsFor {
+    position: absolute;
+    top: 3637px;
+    left: 744px;
+    line-height: 140%;
+    font-weight: 300;
+    color: var(--color-gray-100);
+    display: inline-block;
+    width: 424px;
+  }
+  .desktop2Child1 {
+    position: absolute;
+    top: 2385px;
+    left: calc(50% - 32px);
+    border-top: 2px solid var(--color-black);
+    box-sizing: border-box;
+    width: 60px;
+    height: 2px;
+  }
+  .image2Icon {
+    position: absolute;
+    top: 3723px;
+    left: 896px;
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
+  }
+  .frameChild {
+    cursor: pointer;
+    border: 1px solid var(--color-white);
+    padding: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    border-radius: var(--br-31xl);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    width: 180px;
+    height: 70px;
+  }
+  .signUp {
+    position: absolute;
+    top: 22px;
+    left: 31px;
+    font-size: var(--font-size-13xl);
+    font-weight: 600;
+    font-family: var(--font-montserrat);
+    color: var(--color-white);
+    text-align: left;
+  }
+  .rectangleParent {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 643px;
+    left: 319px;
+    width: 201px;
+    height: 77px;
+    overflow: hidden;
+  }
+  .copyrightLtd,
+  .privacyPolicy,
+  .termsOfService {
+    position: absolute;
+    top: 3982px;
+    left: 289px;
+    font-weight: 300;
+  }
+  .copyrightLtd,
+  .privacyPolicy {
+    top: 3980px;
+    left: 528px;
+  }
+  .copyrightLtd {
+    top: 4224px;
+    left: 36px;
+    font-size: 18px;
+    font-weight: 200;
+  }
+  .contactUs,
+  .helpSupport {
+    position: absolute;
+    top: 3977px;
+    left: 1034px;
+    font-size: var(--font-size-3xl);
+    font-weight: 300;
+  }
+  .helpSupport {
+    top: 3980px;
+    left: 774px;
+  }
+  .image3Icon {
+    position: absolute;
+    top: 3976px;
+    left: 1167px;
+    width: 23px;
+    height: 23px;
+    object-fit: cover;
+  }
+  .ankitdonjaimahishmaticom,
+  .apniHelpKhud,
+  .div,
+  .samjha {
+    position: absolute;
+    top: 4036px;
+    left: 1036px;
+    font-size: var(--font-size-base);
+    font-weight: 300;
+  }
+  .apniHelpKhud,
+  .div,
+  .samjha {
+    left: 774px;
+  }
+  .div,
+  .samjha {
+    top: 4078px;
+    left: 1034px;
+  }
+  .samjha {
+    left: 774px;
+  }
+  .frameItem {
+    position: absolute;
+    top: 2px;
+    left: 22px;
+    border-radius: var(--br-31xl);
+    background-color: var(--color-white);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 180px;
+    height: 70px;
+  }
+  .logIn {
+    position: absolute;
+    top: 17px;
+    left: calc(50% - 49px);
+    font-size: var(--font-size-13xl);
+    font-weight: 600;
+    font-family: var(--font-montserrat);
+    color: #6150b7;
+    text-align: left;
+  }
+  .rectangleGroup {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 648px;
+    left: 75px;
+    width: 220px;
+    height: 93px;
+    overflow: hidden;
+  }
+  .ellipseDiv,
+  .frameInner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 92px;
+  }
+  .ellipseDiv {
+    top: 40px;
+    left: 71px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    width: 40px;
+    height: 40px;
+  }
+  .explore {
+    position: relative;
+    font-size: var(--font-size-lgi);
+    font-family: var(--font-montserrat);
+    color: var(--color-white);
+    text-align: left;
+  }
+  .exploreWrapper {
+    padding: 0 var(--padding-8xs);
+    top: 43px;
+    left: 812px;
+    width: 86px;
+    height: 29px;
+    align-items: flex-end;
+  }
+  .aboutUsWrapper,
+  .contactUsWrapper,
+  .exploreWrapper,
+  .leaderboardWrapper {
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: flex-end;
+  }
+  .leaderboardWrapper {
+    padding: 0 var(--padding-8xs);
+    top: 42px;
+    left: 926px;
+    width: 134px;
+    height: 30px;
+    align-items: flex-end;
+  }
+  .aboutUsWrapper,
+  .contactUsWrapper {
+    padding: 0 8px;
+    top: 43px;
+    left: 1087px;
+    width: 104px;
+    height: 29px;
+    align-items: flex-start;
+  }
+  .contactUsWrapper {
+    padding: 0 9px;
+    top: 41px;
+    left: 1212px;
+    width: 123px;
+    height: 31px;
+  }
+  .rectangleContainer {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 107px;
+    overflow: hidden;
+  }
+  .userEduGetALinkLight9069Icon {
+    position: absolute;
+    top: 2082px;
+    left: 960px;
+    width: 330px;
+    height: 330px;
+    overflow: hidden;
+  }
+  .desktop2 {
+    position: relative;
+    background-color: var(--color-white);
+    width: 1440px;
+    height: 4270px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-xl);
+    color: var(--color-black);
+    font-family: var(--font-montserrat);
+  }
+  @media screen and (max-width: 1200px) {
+    .front1Icon {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transform: rotate(0deg);
+      min-width: 35%;
+      max-width: 30%;
+      min-height: 45%;
+      max-height: 30%;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    .front1Icon {
+      display: flex;
+      width: 50%;
+      height: 51%;
+      min-width: 30%;
+      max-width: 30px;
+      min-height: 30%;
+      max-height: 30px;
+    }
+  }
+  

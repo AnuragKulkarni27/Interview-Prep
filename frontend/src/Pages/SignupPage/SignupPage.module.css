@@ -1,0 +1,209 @@
+.footer,
+.signupContainer {
+  position: absolute;
+  background-color: white;
+}
+.footer {
+  top: 794px;
+  left: 0;
+  width: 1440px;
+  height: 230px;
+}
+.signupContainer {
+  top: 97px;
+  left: calc(50% - 237px);
+  border-radius: var(--br-xl);
+  width: 474px;
+  height: 600px;
+}
+.email {
+  position: absolute;
+  top: 391px;
+  left: 530px;
+}
+.mobileNumber,
+.password,
+.signUp {
+  position: absolute;
+  top: 493px;
+  left: 530px;
+}
+.mobileNumber,
+.signUp {
+  top: 289px;
+}
+.signUp {
+  top: 118px;
+  font-size: var(--font-size-21xl);
+}
+.signuppageChild,
+.yourName {
+  position: absolute;
+  top: 190px;
+  left: 530px;
+}
+.signuppageChild {
+  top: 173.42px;
+  left: 534px;
+  width: 75px;
+  height: 1px;
+  object-fit: cover;
+}
+.continue {
+  position: absolute;
+  top: 405px;
+  left: calc(50% - 57px);
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  color: white;
+}
+.termsOfService {
+  position: absolute;
+  top: 825px;
+  left: 311px;
+  font-size: var(--font-size-xl);
+  font-weight: 300;
+  display: inline-block;
+  width: 175px;
+  height: 14px;
+}
+.copyrightLtd,
+.privacyPolicy {
+  position: absolute;
+  display: inline-block;
+  height: 13px;
+}
+.privacyPolicy {
+  top: 825px;
+  left: 571px;
+  font-size: var(--font-size-xl);
+  font-weight: 300;
+  width: 146px;
+}
+.copyrightLtd {
+  top: 977px;
+  left: 32px;
+  font-size: 18px;
+  font-weight: 200;
+  width: 157px;
+}
+.ankitdonjaimahishmaticom,
+.apniHelpKhud,
+.contactUs,
+.div,
+.helpSupport,
+.samjha {
+  position: absolute;
+  top: 822px;
+  left: 1122px;
+  font-size: var(--font-size-3xl);
+  font-weight: 300;
+  display: inline-block;
+  width: 131px;
+  height: 16px;
+}
+.ankitdonjaimahishmaticom,
+.apniHelpKhud,
+.div,
+.helpSupport,
+.samjha {
+  top: 825px;
+  left: 838px;
+  width: 182px;
+  height: 15px;
+}
+.ankitdonjaimahishmaticom,
+.apniHelpKhud,
+.div,
+.samjha {
+  top: 856px;
+  left: 1125px;
+  font-size: var(--font-size-base);
+  width: 264px;
+  height: 11px;
+}
+.apniHelpKhud,
+.div,
+.samjha {
+  left: 838px;
+  width: 187px;
+}
+.div,
+.samjha {
+  top: 880px;
+  left: 1122px;
+  width: 120px;
+}
+.samjha {
+  left: 838px;
+  width: 76px;
+}
+.emailInput,
+.linkedinInput,
+.passwordInput,
+.usernameInput {
+  border: 1px solid blueviolet;
+  background-color: white;
+  position: absolute;
+  top: 221.5px;
+  left: calc(50% - 196.5px);
+  border-radius: var(--br-8xs);
+  box-shadow: 10px 10px 15px 3px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  width: 387px;
+  height: 42px;
+}
+.emailInput,
+.linkedinInput,
+.passwordInput {
+  top: 425.5px;
+}
+.linkedinInput,
+.passwordInput {
+  top: 324.5px;
+}
+.passwordInput {
+  top: 532.5px;
+  left: calc(50% - 195.5px);
+}
+.continueButton1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 193px);
+  border-radius: var(--br-3xs);
+  background-color: mediumpurple;
+  width: 386px;
+  height: 41px;
+}
+.continue1 {
+  position: absolute;
+  top: 6px;
+  left: calc(50% - 57px);
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: montserrat;
+  color: white;
+  text-align: left;
+}
+.continueButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 627px;
+  left: calc(50% - 195px);
+  width: 386px;
+  height: 41px;
+}
+.signuppage {
+  position: relative;
+  background-color: lavender;
+  width: 1440px;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-mid);
+  color: black;
+  font-family: var(--font-montserrat);
+}
