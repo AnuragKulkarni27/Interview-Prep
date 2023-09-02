@@ -4,6 +4,9 @@ body {
   line-height: normal;
 }
 :root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* fonts */
   --font-montserrat: Montserrat;
 
