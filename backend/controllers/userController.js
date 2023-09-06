@@ -99,7 +99,7 @@ export const loginController = async(req,res) => {
                 message: "You have been banned temporarily"
             })
         }
-        const token = await JWT.sign({id: user._id},process.env.JWT_SECRET, {expiresIn: "7d"})
+        const token = JWT.sign({id: user._id},process.env.JWT_SECRET, {expiresIn: "7d"})
         res.status(200).send({
             success: true,
             message: "Logged In Successfully",
@@ -175,6 +175,82 @@ export const reportUser = async(req,res) => {
         res.status(500).send({
             success: false,
             message: "Something went wrong!"
+        })
+    }
+}
+
+export const updateScoreController = async(req,res) => {
+    try{
+        const { username, feedbackScore } = req.body
+        const user = await userModel.findOne({username: username})
+        if(!user) {
+            res.status(404).send({
+                success: false,
+                message: "user does not exists",
+                user: user,
+                username: username,
+                feedbackScore
+            })
+        }
+        await userModel.findByIdAndUpdate(user._id,{score: user.score+feedbackScore})
+        res.status(201).send({
+            success: true,
+            message: "Score Updated Successfully",
+            prevUser: user
+        })
+    }
+    catch(err) {
+        console.log(err)
+        res.status(500).send({
+            success: false,
+            message: "Error in updating user Score",
+            error: err.message
+        })
+    }
+}
+
+export const updateGivenInterviewsController = async(req,res) => {
+    try {
+        const {username} = req.body
+        const user = await userModel.find({username})
+        await userModel.findByIdAndUpdate(user._id,{interviewGiven: user.interviewGiven + 1})
+        const newUser = await userModel.findById(user._id)
+        res.status(200).send({
+            success: true,
+            message: "Updated Given interview",
+            prevUser: user,
+            newUser
+        })
+    }
+    catch(err) {
+        console.log(err)
+        res.status(500).send({
+            success: false,
+            message: "Error while updating given interviews",
+            err
+        })
+    }
+}
+
+export const updateTakenInterviewsController = async(req,res) => {
+    try {
+        const {username} = req.body
+        const user = await userModel.find({username})
+        await userModel.findByIdAndUpdate(user._id,{interviewTaken: user.interviewTaken + 1})
+        const newUser = await userModel.findById(user._id)
+        res.status(200).send({
+            success: true,
+            message: "Updated Taken interview",
+            prevUser: user,
+            newUser
+        })
+    }
+    catch(err) {
+        console.log(err)
+        res.status(500).send({
+            success: false,
+            message: "Error while updating taken interviews",
+            err
         })
     }
 }
