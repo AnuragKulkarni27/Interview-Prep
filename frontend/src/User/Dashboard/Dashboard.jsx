@@ -1,9 +1,56 @@
 import React from 'react'
 import styles from './Dashboard.module.css'
+import axios from 'axios'
+import useFeedbackStore from '../../stores/giveFeedback'
+import useAuthStore from '../../stores/authStore'
+import { useNavigate } from 'react-router-dom'
+import slugify from 'slugify'
 
 const Dashboard = () => {
+  const navigate = useNavigate()
+  const { auth } = useAuthStore()
+  const { createInterview, interviewId } = useFeedbackStore()
+
+  const startInterviewHandler = async(e) => {
+    // Create new interview room in db
+    const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/rooms/create-room`,{user: auth.user.username})
+    if(res.data.success) {
+      console.log(res.data)
+      createInterview(res.data.interviewRoom._id)
+      navigate(`/room/${slugify(res.data.interviewRoom.interviewerName)}`)
+    }
+    else{
+      alert(res.data.message)
+    }
+  }
+
+  const feedbackHandler = () => {
+    navigate('/feedback-form')
+  }
+
+  const joinInterviewHandler = async() => {
+    const res = await axios.get(`${process.env.REACT_APP_API}/api/v1/rooms/get-room`);
+    if(!res.data.success) {
+      alert(res.data.message)
+      return
+    }
+    if(res.data.interview === null) {
+      alert("No Meetings at this moment")
+      return
+    }
+    const interview = res.data.rooms[0]
+    console.log(interview)
+    const abc = await axios.post(`${process.env.REACT_APP_API}/api/v1/rooms/join-room`,{interviewRoomId: interview._id,intervieweeName: auth.user.username,joinRoom: false})
+    if(!abc.data.success) {
+      alert(abc.data.message)
+      return
+    }
+    navigate(`/room/${slugify(interview.interviewerName)}`)
+  }
+
   return (
     <div className={styles.dashboard}>
+      {auth.user.username} - {interviewId}
       <header className={styles.navbar}>
         <div className={styles.navbarChild} />
         <div className={styles.navbarItem} />
@@ -17,14 +64,17 @@ const Dashboard = () => {
         alt=""
         src="/dashboardimage.svg"
       />
-      <div className={styles.startFeedbackButton}>
-        <div className={styles.startFeedbackButtonChild} />
+      {!interviewId ? (<button className={styles.startFeedbackButton} onClick={startInterviewHandler}>
+        {/* <div className={styles.startFeedbackButtonChild} /> */}
         <b className={styles.startAMeeting}>Start a Meeting</b>
-      </div>
-      <div className={styles.joinInterviewButton}>
-        <div className={styles.joinInterviewButtonChild} />
+      </button>) : (<button className={styles.startFeedbackButton} onClick={feedbackHandler}>
+        {/* <div className={styles.startFeedbackButtonChild} /> */}
+        <b className={styles.startAMeeting}>Give Feedback</b>
+      </button>)}
+      <button className={styles.joinInterviewButton} onClick={joinInterviewHandler}>
+        {/* <div className={styles.joinInterviewButtonChild} /> */}
         <b className={styles.startAMeeting1}>Join a Meeting</b>
-      </div>
+      </button>
       <b className={styles.premiumMeetings}>Premium Meetings</b>
       <div className={styles.nowFreeFor}>Now Free for everyone</div>
     </div>

@@ -1,8 +1,10 @@
 import styles from "./SignupPage.module.css";
 import React, { useState } from "react";
 import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 
 const SignupPage = () => {
+    const navigate = useNavigate()
     const [username,setUsername] = useState('')
     const [linkedIn,setLinkedIn] = useState('')
     const [email,setEmail] = useState('')
@@ -29,6 +31,7 @@ const SignupPage = () => {
         const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/user/register`,{username,password,email,linkedIn});
         if(res.data.success) {
           alert("User Created!");  
+          navigate('/login')
         }
         else {
           alert("Something went wrong!")

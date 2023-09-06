@@ -5,6 +5,7 @@ import cors from 'cors'
 import connectDB from './config/db.js'
 import userRoute from './routes/userRoute.js'
 import leaderboardRouter from './routes/leaderboardRoutes.js'
+import interviewRoute from './routes/interviewRoute.js'
 
 const app = express()
 dotenv.config()
@@ -17,6 +18,7 @@ app.use(morgan('dev'))
 
 app.use('/api/v1/user',userRoute)
 app.use('/api/v1',leaderboardRouter)
+app.use('/api/v1/rooms',interviewRoute)
 
 const PORT = process.env.PORT
 

@@ -8,6 +8,7 @@ import LeaderboardPage from './Pages/LeaderboardPage/LeaderboardPage';
 import FeedbackForm from './Pages/FeedbackForm/FeedbackForm';
 import Dashboard from './User/Dashboard/Dashboard';
 import Profile from './User/Profile/Profile';
+import InterviewRoom from './Pages/InterviewRoom/InterviewRoom';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path='/feedback-form' element={<FeedbackForm />} />
       <Route path='/dashboard' element={<Dashboard />} />
       <Route path='/user' element={<Profile />} />
+      <Route path='/room/:roomId' element={<InterviewRoom />}/>
       <Route path='/*' element={<PageNotFound />}/>
     </Routes>
   );
