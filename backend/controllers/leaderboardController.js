@@ -2,7 +2,7 @@ import userModel from "../models/userModel.js";
 
 export const getTopUsers = async(req,res) => {
     try {
-        const topUsers = await userModel.find({},{_id: 0, username: 1, email: 1, score: 1, interviewsTaken: 1, interviewsGiven: 1}).sort({score: -1}).limit(100)
+        const topUsers = await userModel.find({},{_id: 0, username: 1, email: 1, score: 1, interviewsTaken: 1, interviewsGiven: 1}).sort({score: -1}).limit(25)
 
         res.status(201).send({
             success: true,
@@ -11,7 +11,6 @@ export const getTopUsers = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err) 
         res.status(500).send({
             success: false,
             message: "Something went wrong"

@@ -5,7 +5,7 @@ import JWT from 'jsonwebtoken'
 
 export const registerController = async(req,res) => {
     try {
-        const { username, email, password, department, linkedIn } = req.body
+        const { username, email, password, linkedIn } = req.body
         if(!username) {
             return res.send({
                 success: false,
@@ -30,7 +30,6 @@ export const registerController = async(req,res) => {
                 message: "linkedIn is required!"
             })
         }
-
         const existingUsername = await userModel.findOne({username})
 
         if(existingUsername) {
@@ -40,17 +39,8 @@ export const registerController = async(req,res) => {
             })
         }
 
-        const existingUser = await userModel.findOne({username,email,linkedIn})
-        
-        if(existingUser) {
-            return res.status(409).send({
-                success: false,
-                message: "User Already Exists"
-            })
-        }
-
         const hashedPassword = await hashPassword(password)
-        const user = await new userModel({username,email,password: hashedPassword,department,linkedIn,bio}).save()
+        const user = await new userModel({username,email,password: hashedPassword,linkedIn}).save()
         res.status(201).send({
             success: true,
             message: "User Created Successfully!",
@@ -111,7 +101,6 @@ export const loginController = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err) 
         res.status(500).send({
             success: false,
             message: "Somthing went wrong"
@@ -121,7 +110,7 @@ export const loginController = async(req,res) => {
 
 export const userProfileController = async(req,res) => {
     try {
-        const {username} = req.body
+        const {username} = req.params
 
         const user = await userModel.findOne({username})
         if(!user) {
@@ -145,7 +134,6 @@ export const userProfileController = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err)
         res.status(500).send({
             success: false,
             message: "Something went wrong",
@@ -171,7 +159,6 @@ export const reportUser = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err)
         res.status(500).send({
             success: false,
             message: "Something went wrong!"
@@ -200,7 +187,6 @@ export const updateScoreController = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err)
         res.status(500).send({
             success: false,
             message: "Error in updating user Score",
@@ -212,8 +198,9 @@ export const updateScoreController = async(req,res) => {
 export const updateGivenInterviewsController = async(req,res) => {
     try {
         const {username} = req.body
-        const user = await userModel.find({username})
-        await userModel.findByIdAndUpdate(user._id,{interviewGiven: user.interviewGiven + 1})
+        const user = await userModel.findOne({username})
+        const newGiven = user.interviewsGiven + 1
+        await userModel.findByIdAndUpdate(user._id,{interviewsGiven: newGiven})
         const newUser = await userModel.findById(user._id)
         res.status(200).send({
             success: true,
@@ -223,7 +210,6 @@ export const updateGivenInterviewsController = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err)
         res.status(500).send({
             success: false,
             message: "Error while updating given interviews",
@@ -235,8 +221,9 @@ export const updateGivenInterviewsController = async(req,res) => {
 export const updateTakenInterviewsController = async(req,res) => {
     try {
         const {username} = req.body
-        const user = await userModel.find({username})
-        await userModel.findByIdAndUpdate(user._id,{interviewTaken: user.interviewTaken + 1})
+        const user = await userModel.findOne({username})
+        const newTaken = user.interviewsTaken + 1;
+        await userModel.findByIdAndUpdate(user._id,{interviewsTaken: newTaken})
         const newUser = await userModel.findById(user._id)
         res.status(200).send({
             success: true,
@@ -246,7 +233,6 @@ export const updateTakenInterviewsController = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err)
         res.status(500).send({
             success: false,
             message: "Error while updating taken interviews",

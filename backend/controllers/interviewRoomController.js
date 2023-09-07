@@ -13,7 +13,6 @@ export const createInterviewRoomController = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err) 
         res.status(500).send({
             success: false,
             message: "Error in creating room",
@@ -34,7 +33,6 @@ export const joinInterviewRoomController = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err)
         res.status(500).send({
             success: false,
             message: "Error in Joining Room",
@@ -53,7 +51,6 @@ export const deleteInterviewRoomController = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err)
         res.status(500).send({
             success: false,
             message: "Error in Deleting Room",
@@ -64,7 +61,13 @@ export const deleteInterviewRoomController = async(req,res) => {
 
 export const getInterviewRoomController = async(req,res) => {
     try {
-        const rooms = await interviewRoomModel.find({joinRoom: true}).sort({createdAt: 1}).limit(1)
+        const rooms = await interviewRoomModel.find({joinRoom: true}).sort({createdAt: -1}).limit(1)
+        if(!rooms) {
+            res.status(404).send({
+                success: false,
+                message: "No Meetings at this moment"
+            })
+        }
         res.status(200).send({
             success: true,
             message: "current interview rooms",
@@ -72,7 +75,6 @@ export const getInterviewRoomController = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err) 
         res.status(500).send({
             success: false,
             message: "Error in Getting Rooms",
@@ -101,7 +103,6 @@ export const getInterviewController = async(req,res) => {
         })
     }
     catch(err) {
-        console.log(err)
         res.status(500).send({
             success: false,
             message: "Error in getting room"         

@@ -115,8 +115,6 @@ const FeedbackForm = () => {
     }
     
     const res = axios.get(`${process.env.REACT_APP_API}/api/v1/rooms/room/${interviewId}`)
-    console.log(interviewId)
-    console.log((await res).data.interview)
     await axios.put(`${process.env.REACT_APP_API}/api/v1/user/update-score`,{username: (await res).data.interview.intervieweeName, feedbackScore: score})
     await axios.put(`${process.env.REACT_APP_API}/api/v1/user/update-given`,{username: (await res).data.interview.intervieweeName})
     await axios.put(`${process.env.REACT_APP_API}/api/v1/user/update-taken`,{username: (await res).data.interview.interviewerName})

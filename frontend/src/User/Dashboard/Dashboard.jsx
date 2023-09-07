@@ -23,7 +23,6 @@ const Dashboard = () => {
     // Create new interview room in db
     const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/rooms/create-room`,{user: auth.user.username})
     if(res.data.success) {
-      console.log(res.data)
       createInterview(res.data.interviewRoom._id)
       navigate(`/room/${slugify(res.data.interviewRoom.interviewerName)}`)
     }
@@ -51,7 +50,6 @@ const Dashboard = () => {
       alert("No Meetings at this moment")
       return 
     }
-    console.log(interview)
     const abc = await axios.post(`${process.env.REACT_APP_API}/api/v1/rooms/join-room`,{interviewRoomId: interview._id,intervieweeName: auth.user.username,joinRoom: false})
     if(!abc.data.success) {
       alert(abc.data.message)
