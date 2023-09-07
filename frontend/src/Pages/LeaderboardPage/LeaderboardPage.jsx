@@ -1,57 +1,70 @@
 import styles from "./LeaderboardPage.module.css";
+import useAuthStore from "../../stores/authStore";
+import { useNavigate } from "react-router-dom";
+
 const LeaderboardPage = () => {
+  const {auth} = useAuthStore()
+  const navigate = useNavigate()
+  const handleClick = () => {
+    if(auth?.user) {
+      navigate('/dashboard')
+    }
+    else {
+      navigate('/')
+    }
+  }
   return (
     <div className={styles.leaderboardpage}>
       <header className={styles.leaderboardpageChild} />
-      <b className={styles.home}>Home</b>
-      <b className={styles.dashboard}>Dashboard</b>
-      <b className={styles.explore}>Explore</b>
+      {auth?.user && (<b className={styles.dashboard} onClick={handleClick}>Dashboard</b>)}
+      <b className={styles.home} onClick={handleClick}>Home</b>
+      <b className={styles.explore} onClick={handleClick}>Explore</b>
       <b className={styles.more}>More ...</b>
       <div className={styles.leaderboardpageItem} />
-      <img className={styles.image1Icon} alt="" src="/image-1@2x.png" />
-      <b className={styles.stPlaceText}>1st Place Text Here</b>
-      <b className={styles.ndPlaceText}>2nd Place Text Here</b>
-      <b className={styles.rdPlaceText}>3rd Place Text Here</b>
-      <img className={styles.image2Icon} alt="" src="/image-2@2x.png" />
-      <img className={styles.image3Icon} alt="" src="/image-3@2x.png" />
+      <img className={styles.image1Icon} alt="" src="/rank-1.png" />
+      <b className={styles.stPlaceText}>Aashu</b>
+      <b className={styles.ndPlaceText}>Ankit</b>
+      <b className={styles.rdPlaceText}>Anurag</b>
+      <img className={styles.image2Icon} alt="" src="/rank-2.png" />
+      <img className={styles.image3Icon} alt="" src="/rank-3.png" />
       <div className={styles.leaderboardpageInner} />
-      <div className={styles.randomNames}>Random Names</div>
-      <div className={styles.div}>4</div>
-      <div className={styles.div1}>4</div>
+      <div className={styles.randomNames}>prakriti</div>
+      <div className={styles.div}>400</div>
+      <div className={styles.div1}>30</div>
       <div className={styles.div2}>4</div>
-      <div className={styles.randomNames1}>Random Names</div>
-      <div className={styles.div3}>5</div>
-      <div className={styles.div4}>5</div>
+      <div className={styles.randomNames1}>Anurag Kulkarni</div>
+      <div className={styles.div3}>300</div>
+      <div className={styles.div4}>20</div>
       <div className={styles.div5}>5</div>
-      <div className={styles.randomNames2}>Random Names</div>
-      <div className={styles.div6}>6</div>
-      <div className={styles.div7}>6</div>
+      <div className={styles.randomNames2}>Anant Kumar Singh</div>
+      <div className={styles.div6}>200</div>
+      <div className={styles.div7}>10</div>
       <div className={styles.div8}>6</div>
-      <div className={styles.randomNames3}>Random Names</div>
-      <div className={styles.div9}>{`7) `}</div>
-      <div className={styles.div10}>{`7) `}</div>
-      <div className={styles.div11}>{`7) `}</div>
-      <div className={styles.randomNames4}>Random Names</div>
-      <div className={styles.div12}>{`8) `}</div>
-      <div className={styles.div13}>{`8) `}</div>
-      <div className={styles.div14}>{`8) `}</div>
-      <div className={styles.randomNames5}>Random Names</div>
-      <div className={styles.div15}>{`9) `}</div>
-      <div className={styles.div16}>{`9) `}</div>
-      <div className={styles.div17}>{`9) `}</div>
-      <div className={styles.randomNames6}>Random Names</div>
-      <div className={styles.div18}>{`10) `}</div>
-      <div className={styles.div19}>{`10) `}</div>
-      <div className={styles.div20}>{`10) `}</div>
-      <div className={styles.randomNames7}>Random Names</div>
-      <div className={styles.div21}>{`11) `}</div>
-      <div className={styles.div22}>{`11) `}</div>
-      <div className={styles.div23}>{`11) `}</div>
-      <div className={styles.randomNames8}>Random Names</div>
+      <div className={styles.randomNames3}>Aashu</div>
+      <div className={styles.div9}>100</div>
+      <div className={styles.div10}>5</div>
+      <div className={styles.div11}>7</div>
+      <div className={styles.randomNames4}>Prakriti Keshri</div>
+      <div className={styles.div12}>78</div>
+      <div className={styles.div13}>4</div>
+      <div className={styles.div14}>8</div>
+      <div className={styles.randomNames5}>Anu</div>
+      <div className={styles.div15}>65</div>
+      <div className={styles.div16}>3</div>
+      <div className={styles.div17}>9</div>
+      <div className={styles.randomNames6}>Ayushman Khurana</div>
+      <div className={styles.div18}>50</div>
+      <div className={styles.div19}>1</div>
+      <div className={styles.div20}>10</div>
+      <div className={styles.randomNames7}>Aruragini</div>
+      <div className={styles.div21}></div>
+      <div className={styles.div22}></div>
+      <div className={styles.div23}></div>
+      <div className={styles.randomNames8}>Ankita</div>
       <div className={styles.div24}>12</div>
       <div className={styles.div25}>12</div>
       <div className={styles.div26}>12</div>
-      <div className={styles.randomNames9}>Random Names</div>
+      <div className={styles.randomNames9}>Sanskar</div>
       <div className={styles.div27}>4)</div>
       <div className={styles.div28}>4)</div>
       <div className={styles.div29}>4)</div>
@@ -115,9 +128,9 @@ const LeaderboardPage = () => {
       <div className={styles.leaderboardpageChild17} />
       <div className={styles.leaderboardpageChild18} />
       <div className={styles.leaderboardpageChild19} />
-      <img className={styles.image4Icon} alt="" src="/image-4@2x.png" />
-      <img className={styles.image5Icon} alt="" src="/image-4@2x.png" />
-      <img className={styles.image6Icon} alt="" src="/image-4@2x.png" />
+      <img className={styles.image4Icon} alt="" src="/user.png" />
+      <img className={styles.image5Icon} alt="" src="/user.png" />
+      <img className={styles.image6Icon} alt="" src="/user.png" />
       <div className={styles.ellipseDiv} />
       <div className={styles.leaderboardpageChild20} />
       <div className={styles.leaderboardpageChild21} />

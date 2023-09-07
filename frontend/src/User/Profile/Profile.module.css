@@ -37,6 +37,8 @@
 .dashboard1,
 .home1 {
   position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-weight: bolder;
   top: 54px;
   left: 63px;
 }
@@ -49,6 +51,8 @@
   position: absolute;
   top: 54px;
   left: 1095px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bolder;
 }
 .desktop1Inner,
 .more1 {
@@ -64,6 +68,7 @@
 }
 .rectangleIcon {
   position: absolute;
+  background-color: #F0EAFF;
   top: 146px;
   left: 479px;
   width: 920px;
@@ -91,7 +96,7 @@
 }
 .desktop1Child3 {
   top: 212px;
-  left: calc(50% - 177px);
+  left: 543px;
   width: 300px;
 }
 .desktop1Child4 {
@@ -104,7 +109,8 @@
   position: absolute;
   top: 179px;
   left: 546px;
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-weight: lighter;
   color: black;
   opacity: 0.8;
 }
@@ -131,6 +137,8 @@
 .howdy {
   margin: 0;
   font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-size: xx-large;
 }
 .blankLine {
   margin: 0;
@@ -154,14 +162,17 @@
   display: inline-block;
   width: 838px;
   height: 391px;
-  font-size: var(--font-size-31xl);
+  font-family: 'Inter', sans-serif;
+  font-size: large;
+  font-weight: 1000;
 }
 .aashuKumar {
   position: absolute;
   top: 385px;
   left: 67px;
+  font-family: 'Inter', sans-serif;
+  font-weight: lighter;
   font-size: var(--font-size-21xl);
-  font-weight: 500;
 }
 .image4Icon {
   position: absolute;
@@ -209,8 +220,9 @@
 .bhilaiIndia {
   position: absolute;
   top: 556px;
-  left: 104px;
-  font-weight: 300;
+  left: 101px;
+  font-family: 'Inter', sans-serif;
+  font-weight: lighter;
 }
 .image4Icon1 {
   position: absolute;
@@ -224,7 +236,8 @@
   position: absolute;
   top: 518px;
   left: 104px;
-  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+  font-weight: lighter;
 }
 .image5Icon,
 .image6Icon {
@@ -245,7 +258,8 @@
   position: absolute;
   top: 594px;
   left: 104px;
-  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+  font-weight: lighter;
 }
 .image7Icon {
   position: absolute;
@@ -259,7 +273,8 @@
   position: absolute;
   top: 632px;
   left: 104px;
-  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+  font-weight: lighter;
 }
 .userInfo {
   top: 128px;
@@ -273,11 +288,13 @@
 .numberOfInterview1,
 .userInfo {
   position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-weight: lighter;
   color: black;
 }
 .numberOfInterview1 {
   top: 362px;
-  left: calc(50% - 174px);
+  left: 545px;
   font-weight: 500;
   opacity: 0.8;
 }

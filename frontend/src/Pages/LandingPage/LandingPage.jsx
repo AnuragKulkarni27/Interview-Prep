@@ -1,9 +1,25 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import styles from "./LandingPage.module.css";
 import { useNavigate } from 'react-router-dom'
+import useAuthStore from "../../stores/authStore";
+
 
 const LandingPage = () => {
   const navigate = useNavigate()
+  const ref = useRef(null)
+
+//
+  const {auth} = useAuthStore()
+  useEffect(() => {
+    if(auth?.token) {
+      navigate('/dashboard')
+    }
+  },[auth?.token])
+
+  //
+  const handleClick = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+  };
   useEffect(() => {
     const scrollAnimElements = document.querySelectorAll(
       "[data-animate-on-scroll]"
@@ -61,7 +77,7 @@ const LandingPage = () => {
         We got you ...
       </h3>
       <h3 className={styles.exploreWithUs}>Explore With us</h3>
-      <section className={styles.desktop2Inner} />
+      <section className={styles.desktop2Inner} ref={ref}/>
       <div className={styles.lineDiv} />
       <section className={styles.weArePassionateContainer}>
         <p className={styles.weArePassionate}>
@@ -152,7 +168,7 @@ const LandingPage = () => {
       <nav className={styles.rectangleContainer}>
         <div className={styles.frameInner} />
         <div className={styles.ellipseDiv} />
-        <button className={styles.exploreWrapper}>
+        <button className={styles.exploreWrapper} onClick={() => handleClick()}>
           <div className={styles.explore}>Explore</div>
         </button>
         <button className={styles.leaderboardWrapper} onClick={() => navigate('/ratings')}>
