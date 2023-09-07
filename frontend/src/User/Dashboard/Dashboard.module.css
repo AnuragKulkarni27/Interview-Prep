@@ -1,124 +1,133 @@
 .navbarChild {
-    position: absolute;
-    top: 0;
-    left: calc(50% - 720px);
-    background-color: blueviolet;
-    width: 1440px;
-    height: 70px;
-  }
-  .navbarItem {
-    position: absolute;
-    top: 13px;
-    left: 1376px;
-    border-radius: 50%;
-    background-color: white;
-    width: 40px;
-    height: 40px;
-  }
-  .home,
-  .leaderboard {
-    position: absolute;
-    top: 23px;
-    left: 63px;
-  }
-  .leaderboard {
-    left: 914px;
-  }
-  .explore {
-    top: 23px;
-    left: 1095px;
-  }
-  .explore,
-  .more,
-  .navbar {
-    position: absolute;
-  }
-  .more {
-    top: 23px;
-    left: 1243px;
-  }
-  .navbar {
-    top: 34px;
-    left: calc(50% - 720px);
-    width: 1440px;
-    height: 70px;
-    text-align: left;
-    font-size: var(--font-size-xl);
-    color: white;
-    font-family: var(--font-inter);
-  }
-  .dashboardImageIcon {
-    position: absolute;
-    top: calc(50% - 134.5px);
-    left: 914px;
-    width: 330px;
-    height: 330px;
-    overflow: hidden;
-  }
-  .startFeedbackButtonChild {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: var(--br-8xs);
-    background-color: lavender;
-    width: 270px;
-    height: 50px;
-  }
-  .startAMeeting {
-    position: absolute;
-    top: 13px;
-    left: 53px;
-  }
-  .joinInterviewButtonChild,
-  .startFeedbackButton {
-    position: absolute;
-    top: 598px;
-    left: 75px;
-    width: 270px;
-    height: 50px;
-  }
-  .joinInterviewButtonChild {
-    top: 0;
-    left: 0;
-    border-radius: var(--br-8xs);
-    background-color: white;
-    border: 1.1px solid black;
-    box-sizing: border-box;
-    width: 290px;
-  }
-  .startAMeeting1 {
-    position: absolute;
-    top: 13px;
-    left: 63px;
-  }
-  .joinInterviewButton {
-    position: absolute;
-    top: 597px;
-    left: 407px;
-    width: 290px;
-    height: 50px;
-  }
-  .nowFreeFor,
-  .premiumMeetings {
-    position: absolute;
-    top: 335px;
-    left: 97px;
-    font-size: var(--font-size-31xl);
-    color: black;
-  }
-  .nowFreeFor {
-    top: 427px;
-    font-size: var(--font-size-21xl);
-    font-weight: 600;
-  }
-  .dashboard {
-    background-color: white;
-    width: 1440px;
-    height: 905px;
-    overflow: hidden;
-    text-align: left;
-    font-size: var(--font-size-xl);
-    color: blueviolet;
-    font-family: var(--font-montserrat);
-  }
-  
+  position: absolute;
+  top: 0;
+  background-color: blueviolet;
+  width: 1440px;
+  height: 70px;
+}
+.navbarItem {
+  position: absolute;
+  top: 13px;
+  left: 1376px;
+  border-radius: 50%;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+}
+.home,
+.leaderboard {
+  position: absolute;
+  top: 23px;
+  left: 63px;
+}
+.leaderboard {
+  left: 914px;
+}
+.explore {
+  top: 23px;
+  left: 1095px;
+}
+.explore,
+.more,
+.navbar {
+  position: absolute;
+}
+.more {
+  top: 23px;
+  left: 1243px;
+}
+.navbar {
+  top: 34px;
+  left: calc(50% - 720px);
+  width: 1440px;
+  height: 70px;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: white;
+  font-family: var(--font-inter);
+}
+.dashboardImageIcon {
+  position: absolute;
+  top: calc(50% - 134.5px);
+  left: 914px;
+  width: 330px;
+  height: 330px;
+  overflow: hidden;
+}
+.startFeedbackButtonChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: lavender;
+  width: 270px;
+  height: 50px;
+}
+.startAMeeting {
+  position: absolute;
+  font-size: large;
+  color: #4F33D8;
+  top: 13px;
+  left: 53px;
+}
+.joinInterviewButtonChild,
+.startFeedbackButton {
+  position: absolute;
+  background: #F0EAFF;
+  border: 1.1px solid #F0EAFF;
+  border-radius: 8px;
+  top: 598px;
+  left: 75px;
+  width: 270px;
+  height: 50px;
+}
+.joinInterviewButtonChild {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: white;
+  border: 1.1px solid black;
+  box-sizing: border-box;
+  width: 290px;
+}
+.startAMeeting1 {
+  position: absolute;
+  font-size: large;
+  color: #4F33D8;
+  top: 13px;
+  left: 63px;
+}
+.joinInterviewButton {
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+  top: 597px;
+  left: 407px;
+  width: 290px;
+  height: 50px;
+}
+.nowFreeFor,
+.premiumMeetings {
+  position: absolute;
+  top: 335px;
+  left: 97px;
+  font-size: var(--font-size-21xl);
+  color: black;
+}
+.nowFreeFor {
+  position: absolute;
+  top: 427px;
+  left: 97px;
+  font-size: var(--font-size-21xl);
+  font-weight: 600;
+}
+.dashboard {
+  background-color: white;
+  width: 1440px;
+  height: 605px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: blueviolet;
+  font-family: var(--font-montserrat);
+}

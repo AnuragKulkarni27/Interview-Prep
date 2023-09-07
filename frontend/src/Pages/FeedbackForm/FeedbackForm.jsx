@@ -1,12 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './FeedbackForm.module.css'
 import useFeedbackStore from '../../stores/giveFeedback'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import useAuthStore from '../../stores/authStore'
 
 const FeedbackForm = () => {
   const navigate = useNavigate()
   const { interviewId, deleteInterview} = useFeedbackStore();
+
+  const {auth} = useAuthStore()
+  useEffect(()=>{
+    if(!auth?.token) {
+      navigate('/')
+    }
+  },[auth?.token])
+
+  useEffect(()=> {
+    if(!interviewId) {
+      navigate('/dashboard')
+    }
+  },[interviewId])
 
   const [c1,setC1] = useState(false)
   const [c2,setC2] = useState(false)
@@ -101,8 +115,10 @@ const FeedbackForm = () => {
     }
     
     const res = axios.get(`${process.env.REACT_APP_API}/api/v1/rooms/room/${interviewId}`)
-    console.log(interviewId)
-    console.log((await res).data.interview)
+    await axios.put(`${process.env.REACT_APP_API}/api/v1/user/update-score`,{username: (await res).data.interview.intervieweeName, feedbackScore: score})
+    await axios.put(`${process.env.REACT_APP_API}/api/v1/user/update-given`,{username: (await res).data.interview.intervieweeName})
+    await axios.put(`${process.env.REACT_APP_API}/api/v1/user/update-taken`,{username: (await res).data.interview.interviewerName})
+    await axios.delete(`${process.env.REACT_APP_API}/api/v1/rooms/delete-room`,{interviewRoomId: interviewId})
     deleteInterview()
     navigate('/dashboard')
   }

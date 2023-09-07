@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import styles from './LoginPage.module.css'
-import {Link, useLocation, useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import useAuthStore from '../../stores/authStore'
 
 const LoginPage = () => {
-  const location = useLocation()
   const navigate = useNavigate()
-  const { createAuth } = useAuthStore();
+  const { auth, createAuth } = useAuthStore();
 
+  //
+  useEffect(() => {
+    if(auth?.token) {
+      navigate('/dashboard')
+    }
+  },[auth?.token])
+  //
   const [password,setPassword] = useState('')
   const [username,setUsername] = useState('')
 
@@ -17,16 +23,15 @@ const LoginPage = () => {
       try {
           const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/user/login`,{username: username, password: password})
           if(res.data.success) {
-              alert(res.data.message)
               createAuth({user: res.data.user,token: res.data.token})
-              navigate(location.state ||'/dashboard')
+              alert(res.data.message)
+              navigate('/dashboard')
           }
           else {
               alert(res.data.message)
           }
       }
       catch(err) {
-          console.log(err)
           alert("Something went wrong!")
       }
   }
@@ -39,7 +44,7 @@ const LoginPage = () => {
       <div className={styles.enterMobilePhone}>
         Enter your Username
       </div>
-      <input className={styles.passwordContainer} type="text" value={password} onChange={(e) => setPassword(e.target.value)}/>
+      <input className={styles.passwordContainer} type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
       <div className={styles.desktop1Item} />
       <Link to='/signup' className={styles.signUp}>Sign up ?</Link>
       <div className={styles.termsOfService}>Terms of Service</div>

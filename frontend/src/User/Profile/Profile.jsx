@@ -1,29 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Profile.module.css'
+import axios from 'axios';
+import useAuthStore from '../../stores/authStore';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
+  const navigate = useNavigate()
+  const [user,setData] = useState();
+  const {auth} = useAuthStore()
+
+
+  useEffect(() => {
+    if(!auth?.token) {
+      navigate('/')
+    }
+  },[auth?.token])
+
+  const getData = async() => {
+    const res = await axios.get(`${process.env.REACT_APP_API}/api/v1/user/${auth?.user.username}`)
+    setData(res.data.user)
+  }
+
+  useEffect(() => {
+    if(!auth?.token) {
+      return
+    }
+    else {
+      getData()
+      console.log(user)
+    }
+  },[])
+
   return (
     <div className={styles.desktop1}>
-      <b className={styles.home}>Home</b>
-      <b className={styles.dashboard}>Dashboard</b>
-      <b className={styles.explore}>Explore</b>
-      <b className={styles.more}>More ...</b>
-      <div className={styles.desktop1Child} />
       <header className={styles.desktop1Item} />
-      <b className={styles.home1}>Home</b>
-      <b className={styles.dashboard1}>Dashboard</b>
+      <b className={styles.home1} onClick={() => navigate('/ratings')}>Home</b>
+      <b className={styles.dashboard1} onClick={() => navigate('/ratings')}>Dashboard</b>
       <b className={styles.explore1}>Explore</b>
       <b className={styles.more1}>More ...</b>
       <div className={styles.desktop1Inner} />
-      <img className={styles.rectangleIcon} alt="" src="/rectangle-5.svg" />
-      <img className={styles.desktop1Child1} alt="" src="/rectangle-6.svg" />
-      <img className={styles.desktop1Child2} alt="" src="/rectangle-6.svg" />
-      <img className={styles.desktop1Child3} alt="" src="/rectangle-9.svg" />
-      <img className={styles.desktop1Child4} alt="" src="/rectangle-10.svg" />
+      <img className={styles.rectangleIcon} alt="" src="/r1.svg" />
+      <img className={styles.desktop1Child1} alt="" src="/r2.svg" />
+      <img className={styles.desktop1Child2} alt="" src="/r2.svg" />
+      <img className={styles.desktop1Child3} alt="" src="/r3.svg" />
+      <img className={styles.desktop1Child4} alt="" src="/r4.svg" />
       <div className={styles.scores}>{`Scores `}</div>
       <div className={styles.numberOfInterview}>Number of interview taken</div>
-      <img className={styles.desktop1Child5} alt="" src="/rectangle-6.svg" />
-      <img className={styles.desktop1Child6} alt="" src="/rectangle-11.svg" />
+      <img className={styles.desktop1Child5} alt="" src="/r2.svg" />
+      <img className={styles.desktop1Child6} alt="" src="/r5.svg" />
       <div className={styles.howdyImAContainer}>
         <p className={styles.howdy}>Howdy!</p>
         <p className={styles.blankLine}>
@@ -81,26 +105,26 @@ const Profile = () => {
         </p>
       </div>
       <div className={styles.userInfo}>
-        <div className={styles.aashuKumar}>Aashu Kumar</div>
+        <div className={styles.aashuKumar}>{user?.username}</div>
         <div className={styles.image4Parent}>
-          <img className={styles.image4Icon} alt="" src="/image-4@2x.png" />
+          <img className={styles.image4Icon} alt="" src="/user.png" />
           <div className={styles.frameChild} />
         </div>
         <div className={styles.editProfile}>{`Edit Profile `}</div>
         <div className={styles.userInfoChild} />
-        <div className={styles.bhilaiIndia}>Bhilai , India</div>
-        <img className={styles.image4Icon1} alt="" src="/image-41@2x.png" />
-        <div className={styles.aashu90}>@Aashu.90</div>
-        <img className={styles.image5Icon} alt="" src="/image-5@2x.png" />
-        <img className={styles.image6Icon} alt="" src="/image-6@2x.png" />
-        <div className={styles.aashukumargmailcom}>aashukumar@gmail.com</div>
-        <img className={styles.image7Icon} alt="" src="/image-7@2x.png" />
-        <div className={styles.aashuk90}>aashuk90</div>
+        <div className={styles.bhilaiIndia}>Bhilai, India</div>
+        <img className={styles.image4Icon1} alt="" src="/user-small.png" />
+        <div className={styles.aashu90}>{user?.username}</div>
+        <img className={styles.image5Icon} alt="" src="/location.png" />
+        <img className={styles.image6Icon} alt="" src="/mail.png" />
+        <div className={styles.aashukumargmailcom}>{user?.email}</div>
+        <img className={styles.image7Icon} alt="" src="/linkedin.png"  onClick={() => window.open(user?.linkedIn, "_blank")}/>
+        <div className={styles.aashuk90} onClick={() => window.open(user?.linkedIn, "_blank")}>{user?.linkedIn}</div>
       </div>
       <div className={styles.numberOfInterview1}>Number of Interview given</div>
-      <div className={styles.div}>(0 - 10)</div>
-      <div className={styles.div1}>(0 - 10)</div>
-      <div className={styles.div2}>(0 - 10)</div>
+      <div className={styles.div}>{user?.score}/{Math.pow(10,user?.score.toString().length)}</div>
+      <div className={styles.div1}>{user?.interviewTaken}/{Math.pow(10,user?.interviewTaken.toString().length)}</div>
+      <div className={styles.div2}>{user?.interviewGiven}/{Math.pow(10,user?.interviewGiven.toString().length)}</div>
     </div>
   )
 }
