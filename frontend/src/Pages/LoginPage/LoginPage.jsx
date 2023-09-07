@@ -44,7 +44,7 @@ const LoginPage = () => {
       <div className={styles.enterMobilePhone}>
         Enter your Username
       </div>
-      <input className={styles.passwordContainer} type="text" value={password} onChange={(e) => setPassword(e.target.value)}/>
+      <input className={styles.passwordContainer} type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
       <div className={styles.desktop1Item} />
       <Link to='/signup' className={styles.signUp}>Sign up ?</Link>
       <div className={styles.termsOfService}>Terms of Service</div>
