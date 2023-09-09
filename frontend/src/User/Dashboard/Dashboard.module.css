@@ -76,7 +76,7 @@
   background: #F0EAFF;
   border: 1.1px solid #F0EAFF;
   border-radius: 8px;
-  top: 598px;
+  top: 500px;
   left: 75px;
   width: 270px;
   height: 50px;
@@ -101,7 +101,7 @@
   position: absolute;
   background-color: white;
   border-radius: 8px;
-  top: 597px;
+  top: 500px;
   left: 407px;
   width: 290px;
   height: 50px;
@@ -109,25 +109,47 @@
 .nowFreeFor,
 .premiumMeetings {
   position: absolute;
-  top: 335px;
+  top: 250px;
   left: 97px;
   font-size: var(--font-size-21xl);
   color: black;
 }
 .nowFreeFor {
   position: absolute;
-  top: 427px;
+  top: 330px;
   left: 97px;
   font-size: var(--font-size-21xl);
-  font-weight: 600;
+  font-weight: 500;
 }
 .dashboard {
   background-color: white;
   width: 1440px;
-  height: 605px;
+  height: 575px;
   overflow: hidden;
   text-align: left;
   font-size: var(--font-size-xl);
   color: blueviolet;
   font-family: var(--font-montserrat);
+}
+.optionsInteview {
+  left: 75px;
+  max-width: 270px;
+  height: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+.optionsButtons{
+  position: absolute;
+  content: "";
+  top: 600px;
+  left: 180px;
+  width: 350px;
+  height: 50px;
+  border: 2px solid black;
+  border-color: #000 black black black;
+  border-radius: 5px;
+  color: #4F33D8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: medium;
 }

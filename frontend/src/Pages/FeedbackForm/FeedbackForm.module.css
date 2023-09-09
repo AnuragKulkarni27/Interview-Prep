@@ -1,272 +1,279 @@
 .submitButtonChild {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: var(--br-6xl);
-    background-color: white;
-    border: 2px solid blueviolet;
-    box-sizing: border-box;
-    width: 180px;
-    height: 50px;
-  }
-  .submit {
-    position: absolute;
-    top: 10px;
-    left: 47px;
-    font-size: var(--font-size-5xl);
-    font-weight: 500;
-    font-family: var(--font-montserrat);
-    color: blueviolet;
-    text-align: left;
-    display: inline-block;
-    width: 97px;
-    height: 32px;
-  }
-  .submitButton,
-  .suggestionInput {
-    border: 0;
-    background-color: transparent;
-    position: absolute;
-  }
-  .submitButton {
-    cursor: pointer;
-    padding: 0;
-    top: 867px;
-    left: 1046px;
-    width: 180px;
-    height: 50px;
-  }
-  .suggestionInput {
-    font-family: var(--font-montserrat);
-    font-size: var(--font-size-xl);
-    top: 681px;
-    left: calc(50% - 506px);
-    width: 1012px;
-    height: 150px;
-  }
-  .confidenceChild {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: var(--br-21xl);
-    background-color: lavender;
-    width: 1012px;
-    height: 63px;
-  }
-  .confidence1 {
-    position: absolute;
-    top: 20px;
-    left: 103px;
-    font-weight: 500;
-  }
-  .confidenceChild1,
-  .confidenceInner,
-  .confidenceItem,
-  .ellipseInput {
-    cursor: pointer;
-    position: absolute;
-    top: 13.62px;
-    left: 393.32px;
-    border-radius: 50%;
-    background-color: white;
-    border: 2px solid blueviolet;
-    box-sizing: border-box;
-    width: 37.98px;
-    height: 37.46px;
-  }
-  .confidenceChild1,
-  .confidenceInner,
-  .ellipseInput {
-    left: 579.85px;
-  }
-  .confidenceChild1,
-  .ellipseInput {
-    left: 738.53px;
-  }
-  .confidenceChild1 {
-    left: 899.74px;
-  }
-  .confidence {
-    position: absolute;
-    top: 563px;
-    left: 214px;
-    width: 1012px;
-    height: 63px;
-  }
-  .reasonability1 {
-    position: absolute;
-    top: 19px;
-    left: 92px;
-    font-weight: 500;
-  }
-  .reasonabilityChild1,
-  .reasonabilityChild2,
-  .reasonabilityInner,
-  .reasonabilityItem {
-    cursor: pointer;
-    position: absolute;
-    top: 12.29px;
-    left: 393.32px;
-    border-radius: 50%;
-    background-color: white;
-    border: 2px solid blueviolet;
-    box-sizing: border-box;
-    width: 37.98px;
-    height: 37.8px;
-  }
-  .reasonabilityChild1,
-  .reasonabilityChild2,
-  .reasonabilityInner {
-    left: 579.85px;
-  }
-  .reasonabilityChild1,
-  .reasonabilityChild2 {
-    left: 738.53px;
-  }
-  .reasonabilityChild2 {
-    left: 899.74px;
-  }
-  .reasonability {
-    position: absolute;
-    top: 465px;
-    left: 214px;
-    width: 1012px;
-    height: 63px;
-    text-align: center;
-  }
-  .leadershipSkills1 {
-    position: absolute;
-    top: 20px;
-    left: 76px;
-    font-weight: 500;
-  }
-  .leadershipSkillsChild1,
-  .leadershipSkillsChild2,
-  .leadershipSkillsInner,
-  .leadershipSkillsItem {
-    cursor: pointer;
-    position: absolute;
-    top: 13.44px;
-    left: 393.32px;
-    border-radius: 50%;
-    background-color: white;
-    border: 2px solid blueviolet;
-    box-sizing: border-box;
-    width: 37.98px;
-    height: 37.8px;
-  }
-  .leadershipSkillsChild1,
-  .leadershipSkillsChild2,
-  .leadershipSkillsInner {
-    left: 579.85px;
-  }
-  .leadershipSkillsChild1,
-  .leadershipSkillsChild2 {
-    left: 738.53px;
-  }
-  .leadershipSkillsChild2 {
-    left: 899.74px;
-  }
-  .leadershipSkills {
-    position: absolute;
-    top: 367px;
-    left: 214px;
-    width: 1012px;
-    height: 63px;
-  }
-  .technicalSkills1 {
-    position: absolute;
-    top: 21px;
-    left: 85px;
-    font-weight: 500;
-  }
-  .technicalSkillsChild1,
-  .technicalSkillsChild2,
-  .technicalSkillsInner,
-  .technicalSkillsItem {
-    cursor: pointer;
-    position: absolute;
-    top: 14.28px;
-    left: 393.32px;
-    border-radius: 50%;
-    background-color: white;
-    border: 2px solid blueviolet;
-    box-sizing: border-box;
-    width: 37.98px;
-    height: 37.8px;
-  }
-  .technicalSkillsChild1,
-  .technicalSkillsChild2,
-  .technicalSkillsInner {
-    left: 579.85px;
-  }
-  .technicalSkillsChild1,
-  .technicalSkillsChild2 {
-    left: 738.53px;
-  }
-  .technicalSkillsChild2 {
-    left: 899.74px;
-  }
-  .technicalSkills {
-    position: absolute;
-    top: 269px;
-    left: 214px;
-    width: 1012px;
-    height: 63px;
-  }
-  .communicationSkills1 {
-    position: absolute;
-    top: 20px;
-    left: 50px;
-    font-weight: 500;
-  }
-  .communicationSkills {
-    position: absolute;
-    top: 171px;
-    left: 214px;
-    width: 1012px;
-    height: 63px;
-  }
-  .good,
-  .marvelous,
-  .mediocre,
-  .needImprovement {
-    position: absolute;
-    top: 116px;
-    left: 546px;
-    font-size: var(--font-size-base);
-  }
-  .good,
-  .marvelous,
-  .mediocre {
-    left: 775px;
-  }
-  .good,
-  .marvelous {
-    left: 950px;
-  }
-  .marvelous {
-    left: 1094px;
-  }
-  .feedback {
-    position: absolute;
-    top: 32px;
-    left: calc(50% - 108px);
-    font-size: var(--font-size-21xl);
-    font-weight: 600;
-    display: inline-block;
-    width: 216px;
-    height: 53px;
-  }
-  .desktop1 {
-    position: relative;
-    background-color: white;
-    width: 1440px;
-    height: 950px;
-    overflow: hidden;
-    text-align: left;
-    font-size: var(--font-size-xl);
-    color: black;
-    font-family: var(--font-montserrat);
-  }
-  
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xl);
+  background-color: white;
+  border: 2px solid blueviolet;
+  box-sizing: border-box;
+  width: 180px;
+  height: 50px;
+}
+.submit {
+  position: absolute;
+  top: 15px;
+  left: 65px;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  font-family: var(--font-montserrat);
+  color: blueviolet;
+  text-align: left;
+  display: inline-block;
+  width: 97px;
+  height: 32px;
+}
+.submitButton,
+.suggestionInput {
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+}
+.submitButton {
+  cursor: pointer;
+  padding: 0;
+  top: 867px;
+  left: 1046px;
+  width: 180px;
+  height: 50px;
+}
+.reportButton {
+  cursor: pointer;
+  padding: 0;
+  top: 867px;
+  left: 240px;
+  width: 180px;
+  height: 50px;
+}
+.suggestionInput {
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-xl);
+  top: 681px;
+  left: calc(50% - 506px);
+  width: 1012px;
+  height: 150px;
+}
+.confidenceChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-21xl);
+  background-color: lavender;
+  width: 1012px;
+  height: 63px;
+}
+.confidence1 {
+  position: absolute;
+  top: 20px;
+  left: 103px;
+  font-weight: 500;
+}
+.confidenceChild1,
+.confidenceInner,
+.confidenceItem,
+.ellipseInput {
+  cursor: pointer;
+  position: absolute;
+  top: 13.62px;
+  left: 393.32px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid blueviolet;
+  box-sizing: border-box;
+  width: 37.98px;
+  height: 37.46px;
+}
+.confidenceChild1,
+.confidenceInner,
+.ellipseInput {
+  left: 579.85px;
+}
+.confidenceChild1,
+.ellipseInput {
+  left: 738.53px;
+}
+.confidenceChild1 {
+  left: 899.74px;
+}
+.confidence {
+  position: absolute;
+  top: 563px;
+  left: 214px;
+  width: 1012px;
+  height: 63px;
+}
+.reasonability1 {
+  position: absolute;
+  top: 19px;
+  left: 92px;
+  font-weight: 500;
+}
+.reasonabilityChild1,
+.reasonabilityChild2,
+.reasonabilityInner,
+.reasonabilityItem {
+  cursor: pointer;
+  position: absolute;
+  top: 12.29px;
+  left: 393.32px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid blueviolet;
+  box-sizing: border-box;
+  width: 37.98px;
+  height: 37.8px;
+}
+.reasonabilityChild1,
+.reasonabilityChild2,
+.reasonabilityInner {
+  left: 579.85px;
+}
+.reasonabilityChild1,
+.reasonabilityChild2 {
+  left: 738.53px;
+}
+.reasonabilityChild2 {
+  left: 899.74px;
+}
+.reasonability {
+  position: absolute;
+  top: 465px;
+  left: 214px;
+  width: 1012px;
+  height: 63px;
+  text-align: center;
+}
+.leadershipSkills1 {
+  position: absolute;
+  top: 20px;
+  left: 76px;
+  font-weight: 500;
+}
+.leadershipSkillsChild1,
+.leadershipSkillsChild2,
+.leadershipSkillsInner,
+.leadershipSkillsItem {
+  cursor: pointer;
+  position: absolute;
+  top: 13.44px;
+  left: 393.32px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid blueviolet;
+  box-sizing: border-box;
+  width: 37.98px;
+  height: 37.8px;
+}
+.leadershipSkillsChild1,
+.leadershipSkillsChild2,
+.leadershipSkillsInner {
+  left: 579.85px;
+}
+.leadershipSkillsChild1,
+.leadershipSkillsChild2 {
+  left: 738.53px;
+}
+.leadershipSkillsChild2 {
+  left: 899.74px;
+}
+.leadershipSkills {
+  position: absolute;
+  top: 367px;
+  left: 214px;
+  width: 1012px;
+  height: 63px;
+}
+.technicalSkills1 {
+  position: absolute;
+  top: 21px;
+  left: 85px;
+  font-weight: 500;
+}
+.technicalSkillsChild1,
+.technicalSkillsChild2,
+.technicalSkillsInner,
+.technicalSkillsItem {
+  cursor: pointer;
+  position: absolute;
+  top: 14.28px;
+  left: 393.32px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid blueviolet;
+  box-sizing: border-box;
+  width: 37.98px;
+  height: 37.8px;
+}
+.technicalSkillsChild1,
+.technicalSkillsChild2,
+.technicalSkillsInner {
+  left: 579.85px;
+}
+.technicalSkillsChild1,
+.technicalSkillsChild2 {
+  left: 738.53px;
+}
+.technicalSkillsChild2 {
+  left: 899.74px;
+}
+.technicalSkills {
+  position: absolute;
+  top: 269px;
+  left: 214px;
+  width: 1012px;
+  height: 63px;
+}
+.communicationSkills1 {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  font-weight: 500;
+}
+.communicationSkills {
+  position: absolute;
+  top: 171px;
+  left: 214px;
+  width: 1012px;
+  height: 63px;
+}
+.good,
+.marvelous,
+.mediocre,
+.needImprovement {
+  position: absolute;
+  top: 116px;
+  left: 546px;
+  font-size: var(--font-size-base);
+}
+.good,
+.marvelous,
+.mediocre {
+  left: 775px;
+}
+.good,
+.marvelous {
+  left: 950px;
+}
+.marvelous {
+  left: 1094px;
+}
+.feedback {
+  position: absolute;
+  top: 32px;
+  left: calc(50% - 108px);
+  font-size: var(--font-size-21xl);
+  font-weight: 600;
+  display: inline-block;
+  width: 216px;
+  height: 53px;
+}
+.desktop1 {
+  position: relative;
+  background-color: white;
+  width: 1440px;
+  height: 950px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: black;
+  font-family: var(--font-montserrat);
+}

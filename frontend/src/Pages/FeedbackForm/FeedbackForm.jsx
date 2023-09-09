@@ -113,12 +113,11 @@ const FeedbackForm = () => {
     else {
       score += 4
     }
-    
     const res = axios.get(`${process.env.REACT_APP_API}/api/v1/rooms/room/${interviewId}`)
+    await axios.delete(`${process.env.REACT_APP_API}/api/v1/rooms/delete-room`,{interviewRoomId: interviewId})
     await axios.put(`${process.env.REACT_APP_API}/api/v1/user/update-score`,{username: (await res).data.interview.intervieweeName, feedbackScore: score})
     await axios.put(`${process.env.REACT_APP_API}/api/v1/user/update-given`,{username: (await res).data.interview.intervieweeName})
     await axios.put(`${process.env.REACT_APP_API}/api/v1/user/update-taken`,{username: (await res).data.interview.interviewerName})
-    await axios.delete(`${process.env.REACT_APP_API}/api/v1/rooms/delete-room`,{interviewRoomId: interviewId})
     deleteInterview()
     navigate('/dashboard')
   }

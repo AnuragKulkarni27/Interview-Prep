@@ -88,7 +88,7 @@ export const getInterviewController = async(req,res) => {
         const {interviewId} = req.params
         const interview = await interviewRoomModel.findById(interviewId)
         if(!interview) {
-            return res.status(404).send({
+            return res.status(201).send({
                 success: false,
                 message: "interview not found"
             })

@@ -152,6 +152,7 @@
   box-sizing: border-box;
   width: 387px;
   height: 42px;
+  font-size: initial;
 }
 .emailInput,
 .linkedinInput,
