@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Dashboard.module.css'
 import axios from 'axios'
 import useFeedbackStore from '../../stores/giveFeedback'
@@ -9,8 +9,11 @@ import slugify from 'slugify'
 const Dashboard = () => {
   const navigate = useNavigate()
   const { auth } = useAuthStore()
-  const { createInterview, interviewId } = useFeedbackStore()
-
+  const { createInterview, interviewId } = useFeedbackStore()  
+  const [selectedValue,setSelectedValue] = useState("1")
+  const handleChange = (e) => {
+    setSelectedValue(e.target.value);
+  };
   //
   useEffect(() => {
     if(!auth?.token) {
@@ -19,9 +22,11 @@ const Dashboard = () => {
   },[auth?.token])
   //
 
+
   const startInterviewHandler = async(e) => {
-    // Create new interview room in db
-    const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/rooms/create-room`,{user: auth.user.username})
+    // Create new interview room in db)
+    const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/rooms/create-room`,{user: auth.user.username,interviewType: selectedValue})
+    console.log(auth.user.username,selectedValue)
     if(res.data.success) {
       createInterview(res.data.interviewRoom._id)
       navigate(`/room/${slugify(res.data.interviewRoom.interviewerName)}`)
@@ -59,6 +64,7 @@ const Dashboard = () => {
   }
 
   return (
+    <>
     <div className={styles.dashboard}>
       <header className={styles.navbar}>
         <div className={styles.navbarChild} />
@@ -76,18 +82,27 @@ const Dashboard = () => {
       />
       {!interviewId ? (<button className={styles.startFeedbackButton} onClick={startInterviewHandler}>
         {/* <div className={styles.startFeedbackButtonChild} /> */}
-        <b className={styles.startAMeeting}>Start a Meeting</b>
+        <b className={styles.startAMeeting}>Take an Interview</b>
       </button>) : (<button className={styles.startFeedbackButton} onClick={feedbackHandler}>
         {/* <div className={styles.startFeedbackButtonChild} /> */}
         <b className={styles.startAMeeting}>Give Feedback</b>
       </button>)}
       <button className={styles.joinInterviewButton} onClick={joinInterviewHandler}>
         {/* <div className={styles.joinInterviewButtonChild} /> */}
-        <b className={styles.startAMeeting1}>Join a Meeting</b>
+        <b className={styles.startAMeeting1}>Give an Interview</b>
+        
       </button>
+
       <b className={styles.premiumMeetings}>Premium Meetings</b>
       <div className={styles.nowFreeFor}>Now Free for everyone</div>
-    </div>
+    </div>      
+    <select value={selectedValue} className= {styles.optionsButtons} onChange={handleChange}>
+      <option value="1">Front End</option>
+      <option value="2">Back End</option>
+      <option value="3">Full Stack</option>
+      <option value="4">Data structures & Algorithms</option>
+    </select>
+    </>
   )
 }
 
